@@ -1,5 +1,4 @@
-from pydantic import BaseModel
-from typing import Optional
+from pydantic import BaseModel, Field
 
 
 class VideoSearchData(BaseModel):
@@ -13,7 +12,7 @@ class VideoSearchData(BaseModel):
     review: int
     pubdate: int
     duration: str
-    rank_score: Optional[int] = None
+    rank_score: int | None = None
     like: int
 
 
@@ -23,7 +22,7 @@ class SearchData(BaseModel):
     pagesize: int
     numResults: int
     numPages: int
-    result: list[VideoSearchData]
+    result: list[VideoSearchData] = Field(default_factory=list)
 
 
 class SearchResult(BaseModel):
@@ -31,6 +30,7 @@ class SearchResult(BaseModel):
     message: str
     ttl: int
     data: SearchData
+
 
 class VideoOwner(BaseModel):
     mid: int
@@ -49,14 +49,15 @@ class VideoStats(BaseModel):
     now_rank: int
     his_rank: int
     like: int
-    dislike: int
-    evaluation: str
-    vt: int
+    dislike: int | None = None
+    evaluation: str | None = None
+    vt: int | None = None
+
 
 class VideoData(BaseModel):
     bvid: str
     tname: str
-    tname_v2: str
+    tname_v2: str | None = None
     pic: str
     title: str
     pubdate: int
@@ -64,6 +65,7 @@ class VideoData(BaseModel):
     desc: str
     owner: VideoOwner
     stat: VideoStats
+
 
 class VideoResult(BaseModel):
     code: int

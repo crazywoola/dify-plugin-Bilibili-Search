@@ -1,0 +1,44 @@
+identity:
+  author: jingfelix
+  name: bilibili_search
+  label:
+    en_US: Bilibili Search
+    ja_JP: Bilibili 検索
+    zh_Hans: Bilibili 搜索
+    pt_BR: Bilibili Pesquisa
+  description:
+    en_US: Search videos and retrieve video information on Bilibili
+    ja_JP: Bilibili で動画を検索し、動画情報を取得する
+    zh_Hans: 在 Bilibili 上搜索视频并获取视频信息
+    pt_BR: Pesquise vídeos e obtenha informações de vídeos no Bilibili
+  icon: icon.svg
+  icon_dark: icon-dark.svg
+  tags:
+    - videos
+    - search
+credentials_for_provider:
+  cookies:
+    type: secret-input
+    required: true
+    label:
+      en_US: Bilibili Cookies
+      ja_JP: Bilibili クッキー
+      zh_Hans: B站 Cookie
+      pt_BR: Cookies do Bilibili
+    placeholder:
+      en_US: Enter your Bilibili cookies
+      ja_JP: Bilibili のクッキーを入力してください
+      zh_Hans: 输入您的 B站 cookie
+      pt_BR: Digite seus cookies do Bilibili
+    help:
+      en_US: Get your cookies from the Bilibili website after logging in
+      ja_JP: ログイン後、Bilibili のウェブサイトからクッキーを取得してください
+      zh_Hans: 从已登录的 B站 网页中获取 cookie
+      pt_BR: Obtenha seus cookies do site Bilibili após fazer login
+    url: https://github.com/jingfelix/dify-plugin-Bilibili-Search/blob/main/README.md
+tools:
+  - tools/bilibili_search.yaml
+  - tools/bilibili_get_video_info.yaml
+extra:
+  python:
+    source: provider/bilibili_search.py

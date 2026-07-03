@@ -1,6 +1,6 @@
 # Privacy Policy for Bilibili Search Plugin
 
-Last updated: [Current Date]
+Last updated: 2026-07-03
 
 This Privacy Policy describes how the Bilibili Search Plugin ("Plugin", "we", "us", or "our") handles your information when you use our plugin within the Dify platform.
 

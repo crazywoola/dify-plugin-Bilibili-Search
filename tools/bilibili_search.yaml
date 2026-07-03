@@ -3,11 +3,13 @@ identity:
   author: jingfelix
   label:
     en_US: Bilibili Search
+    ja_JP: Bilibili 検索
     zh_Hans: 哔哩哔哩搜索
     pt_BR: Pesquisa Bilibili
 description:
   human:
     en_US: Search for videos on Bilibili
+    ja_JP: Bilibili で動画を検索する
     zh_Hans: 在哔哩哔哩上搜索视频
     pt_BR: Pesquisar vídeos no Bilibili
   llm: Search for videos on Bilibili platform. Returns search results including titles, authors, descriptions and other metadata.
@@ -17,10 +19,12 @@ parameters:
     required: true
     label:
       en_US: Search Keyword
+      ja_JP: 検索キーワード
       zh_Hans: 搜索关键词
       pt_BR: Palavra-chave
     human_description:
       en_US: Enter the keywords you want to search on Bilibili
+      ja_JP: Bilibili で検索したいキーワードを入力してください
       zh_Hans: 输入您想在哔哩哔哩上搜索的关键词
       pt_BR: Digite as palavras-chave que você deseja pesquisar no Bilibili
     llm_description: The keywords to search for on Bilibili platform. This can be video titles, usernames, or any other searchable content.
@@ -28,15 +32,20 @@ parameters:
   - name: page
     type: number
     required: false
+    default: 1
+    min: 1
+    max: 50
     label:
       en_US: Page Number
+      ja_JP: ページ番号
       zh_Hans: 页码
       pt_BR: Número da Página
     human_description:
       en_US: The page number of search results (default is 1)
+      ja_JP: 検索結果のページ番号（デフォルトは 1）
       zh_Hans: 搜索结果的页码（默认为第1页）
       pt_BR: O número da página dos resultados da pesquisa (padrão é 1)
-    llm_description: The page number of search results to retrieve. Each page contains multiple results. Defaults to 1 if not specified.
+    llm_description: The page number of the search results, as a positive integer starting from 1 (e.g. 1, 2, 3). Do NOT put the search keyword here. Omit this parameter to get the first page.
     form: llm
 extra:
   python:

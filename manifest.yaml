@@ -1,4 +1,4 @@
-version: 0.0.3
+version: 0.0.4
 type: plugin
 author: jingfelix
 name: bilibili_search
@@ -13,21 +13,23 @@ description:
   zh_Hans: 在 Bilibili 上搜索视频或查看视频信息
   pt_BR: Pesquisar ou visualizar informações de vídeo no Bilibili
 icon: icon.svg
+icon_dark: icon-dark.svg
 resource:
   memory: 268435456
   permission: {}
 plugins:
   tools:
-  - provider/bilibili.yaml
+    - provider/bilibili_search.yaml
 meta:
   version: 0.0.1
   arch:
-  - amd64
-  - arm64
+    - amd64
+    - arm64
   runner:
     language: python
     version: "3.12"
     entrypoint: main
+  minimum_dify_version: null
 created_at: 2025-04-21T22:09:22.160377917+08:00
 privacy: PRIVACY.md
 verified: false

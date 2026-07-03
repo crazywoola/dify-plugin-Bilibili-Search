@@ -171,6 +171,11 @@ cython_debug/
 .git/
 .gitignore
 
+# CI and dev-only files
+.github/
+.env.example
+pyproject.toml
+
 # Mac
 .DS_Store
 

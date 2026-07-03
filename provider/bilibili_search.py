@@ -6,20 +6,17 @@ from dify_plugin.errors.tool import ToolProviderCredentialValidationError
 from tools.util import parse_cookies, search_bilibili
 
 
-class BilibiliProvider(ToolProvider):
+class BilibiliSearchProvider(ToolProvider):
     def _validate_credentials(self, credentials: dict[str, Any]) -> None:
-        try:
-            cookies: str = credentials.get("cookies")
-            if not cookies:
-                raise ToolProviderCredentialValidationError(
-                    "Missing cookies in credentials"
-                )
+        cookies = credentials.get("cookies")
+        if not cookies:
+            raise ToolProviderCredentialValidationError("Missing cookies in credentials")
 
-            _ = search_bilibili(
+        try:
+            search_bilibili(
                 keyword="Dify",
                 page=1,
                 cookies=parse_cookies(cookies),
             )
-
         except Exception as e:
-            raise ToolProviderCredentialValidationError(str(e))
+            raise ToolProviderCredentialValidationError(str(e)) from e

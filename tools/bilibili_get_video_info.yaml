@@ -3,11 +3,13 @@ identity:
   author: jingfelix
   label:
     en_US: Get Bilibili Video Info
+    ja_JP: Bilibili 動画情報を取得
     zh_Hans: 获取哔哩哔哩视频信息
     pt_BR: Obter informações do vídeo Bilibili
 description:
   human:
     en_US: Get video information from Bilibili
+    ja_JP: Bilibili から動画情報を取得する
     zh_Hans: 获取哔哩哔哩视频信息
     pt_BR: Obter informações do vídeo Bilibili
   llm: Get video information from Bilibili platform. Returns video details including titles, authors, descriptions and other metadata.
@@ -17,13 +19,15 @@ parameters:
     required: true
     label:
       en_US: Bilibili Video bvid
+      ja_JP: 動画 bvid
       zh_Hans: 视频 bvid
       pt_BR: bvid do Vídeo Bilibili
     human_description:
       en_US: Enter the bvid of the video you want to get information for on Bilibili
+      ja_JP: 情報を取得したい Bilibili 動画の bvid を入力してください
       zh_Hans: 输入您想获取信息的哔哩哔哩视频的 bvid
       pt_BR: Digite o bvid do vídeo que você deseja obter informações no Bilibili
-    llm_description: The bvid to get information for on Bilibili platform. This is the unique identifier for videos.
+    llm_description: The bvid to get information for on Bilibili platform. This is the unique identifier for videos, starting with "BV" (e.g. BV1GJ411x7h7).
     form: llm
 extra:
   python:
